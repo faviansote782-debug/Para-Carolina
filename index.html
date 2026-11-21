@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una sorpresa para Carolina</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+    <!-- PRIMERA PANTALLA -->
+    <main class="welcome" id="bienvenida">
+        <div class="stars">✦　✧　✦　✧　✦</div>
+
+        <p class="subtitle">UNA PEQUEÑA SORPRESA PARA</p>
+
+        <h1>Carolina</h1>
+
+        <p class="message">
+            Hoy es el día especial de mi persona especial y hay algo que hice para ti :3 
+        </p>
+
+        <button onclick="descubrirSorpresa()">
+            Descubre tu sorpresa ✨
+        </button>
+
+        <p class="footer">Espero que te guste  :3</p>
+    </main>
+
+    <!-- SEGUNDA PANTALLA -->
+    <main class="gift-screen" id="regalo" style="display: none;">
+        <p class="subtitle">ESTE ES UNO DE LOS REGALOS QUE TENGO PARA TI...</p>
+
+        <h1>Abrelo chismosa </h1>
+
+        <div class="gift-box" id="caja" onclick="abrirRegalo()">
+            <div class="gift-lid"></div>
+            <div class="gift-body"></div>
+            <div class="gift-ribbon"></div>
+            <div class="gift-bow">🎀</div>
+        </div>
+
+        <p class="message" id="mensaje-regalo">
+            ¿Ya pero a donde vamos a parar?
+        </p>
+
+        <button id="boton-regalo" onclick="abrirRegalo()">
+            Abrir regalo 🎁
+        </button>
+
+        <button id="continuar-regalo" onclick="continuarAventura()" style="display: none;">
+            Continua que aun sigue... 
+        </button>
+    </main>
+ 
+ <!-- TERCERA PANTALLA: UNIVERSO DE CAROLINA -->
+    <main class="universe-screen" id="universo" style="display: none;">
+
+     <p class="subtitle">UN UNIVERSO HECHO PARA TI</p>
+
+    <h1>Un poquito de Carolina</h1>
+
+    <p class="message">
+        Porque cada pequeño detalle cuenta una historia...
+    </p>
+
+    <div class="interests">
+
+            <div class="interest-card">
+                <div class="interest-icon">🐈</div>
+                 <h2>La foto...</h2>
+                <p>Recuerdo la primera foto real que me enviaste y esa es la de Shiva ese gato tan hermoso que salio igual de lindo que su dueña, psdt: lo quiero conocer.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🐍</div>
+                 <h2>El primer dia...</h2>
+                <p>Y como olvidarme del dia que nos conocimos tu disfraz 10/10 de Harry Potter el dia mas especial de mi vida actualmente .</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🦸</div>
+                 <h2>Mi heroina...</h2>
+                <p>Gracias por salvarme de la obscuridad en la que estaba, yo te necesito tanto como superman al sol.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🎤</div>
+                 <h2>El artista</h2>
+                <p>Siempre que me hablas de Michael Jackson me imagino tu rostro todo hermoso y de la misma manera que te emocionas hablando de el yo lo hago cuando hablo de ti.</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🍕</div>
+                 <h2>Tu Comida favorita...</h2>
+                <p>Tu y yo nos complementamos como lo hacen el queso y el pepperoni cada uno sabe bien por separado pero saben mucho mejor juntos...</p>
+            </div>
+
+            <div class="interest-card">
+                <div class="interest-icon">🍬</div>
+                 <h2>Dulces...</h2>
+                <p>Gracias por endulzar mis dias por tu culpa me va a dar diabetes, los dias contigo son dulces por la manera en la que me tratas y acidos por los chistes rancios que decimos .</p>
+            </div>
+
+        </div>
+
+        <button onclick="irCelebracion()">
+          Continuar ✨
+        </button>
+
+    </main>
+    <!-- CUARTA PANTALLA: CELEBRACIÓN -->
+
+ <!-- CUARTA PANTALLA: LA PREGUNTA -->
+    <main class="question-screen" id="pregunta" style="display: none;">
+
+        <p class="subtitle">ANTES DE CONTINUAR...</p>
+
+        <h1>Quiero preguntarte algo</h1>
+
+        <p class="message">
+            Pero primero necesito que me respondas con sinceridad...
+        </p>
+
+        <div class="question-box">
+            <h2>¿Pero me quieres, sí o no? 🤍</h2>
+
+            <p id="mensaje-no" class="question-message">
+                Piénsalo bien... 👀
+            </p>
+
+            <div class="question-buttons">
+                <button id="boton-si" onclick="responderSi()">
+                    ¡Sí! 💛
+                </button>
+
+                <button id="boton-no" onclick="responderNo()">
+                    No 🙃
+                </button>
+            </div>
+        </div>
+
+        <div id="respuesta-si" style="display: none;">
+            <h2>YA LO SABÍA JAJSJAJSJA 💛</h2>
+
+            <p class="message">
+                Yo también te quiero, hermosa :3
+            </p>
+
+            <p class="question-message">
+                Conste que nadie te obligó... 🤭
+            </p>
+
+            <button onclick="irCarta()">
+                Ahora sí, tengo algo más para ti 🤍
+            </button>
+         </div>
+
+    </main>
+    
+<!-- QUINTA PANTALLA: CARTA FINAL -->
+    <main class="letter-screen" id="carta" style="display: none;">
+
+        <p class="subtitle">Tengo un ultimo detalle para ti hermosa :3</p>
+
+        <h1>Para Carolina 💛</h1>
+
+        <div class="letter-container">
+            <div class="letter-decoration">✦</div>
+
+            <p id="texto-carta">
+                Bueno este mensaje es para ti Carolina la verdad es que en este corto tiempo que te eh conocido pues te convertiste en alguien muy especial para mi realmente cada cosa que dices cada cosa que haces me gusta mucho se que es un corto tiempo lo se pero no 
+                puedo sacarme de la cabeza la manera en que llegamos a conectar es algo muy irreal y te juro que nunca me habia pasado te quiero mucho te eh llegado a querer de manera inexplicables con palabras eres lo mas importante que llego a mi vida y doy gracias a 
+                Dios que te haya puesto en mi camino  por que desde que llegaste mi vida llena de vacios y obscuridad lo llenaste con luz y esperanza solo me queda decirte gracias por aparecer y gracias por ser tu misma por que de eso es lo que me enamoro cada dia mas de nuevo te quiero mucho 
+                y espero que hoy tengas un hermoso  cumpleaños que  la pases super bien con la gente que quieres y te quieren se que realizaras todas tus metas y sueños  por que siempre que te veo, veo a la mejor doctora que va a existir :3 feliz cumple caro mi heroina....
+            </p>
+
+            <div class="letter-signature">
+                Espero que te haya gustado. 💛
+            </div>
+        </div>
+
+    </main>
+
+    <script src="static/js/script.js"></script>
+</body>
+</html>
