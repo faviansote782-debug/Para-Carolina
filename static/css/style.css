@@ -1,0 +1,435 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #174a38, #071c16);
+    color: #f8e8ae;
+    font-family: Georgia, serif;
+    overflow: hidden;
+}
+
+.welcome {
+    text-align: center;
+    padding: 40px 20px;
+    animation: aparecer 1.5s ease;
+}
+
+.stars {
+    color: #e8c96c;
+    font-size: 30px;
+    margin-bottom: 45px;
+    animation: brillar 3s infinite alternate;
+}
+
+.subtitle {
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #d5bd79;
+}
+
+h1 {
+    font-size: clamp(55px, 10vw, 100px);
+    font-weight: normal;
+    margin: 20px 0;
+    color: #f4df9b;
+    text-shadow: 0 0 30px #c9a84b66;
+}
+
+.message {
+    font-size: 19px;
+    color: #e4dfc9;
+    margin: 20px 0 35px;
+}
+
+button {
+    padding: 16px 35px;
+    border: 1px solid #d6b85c;
+    background: transparent;
+    color: #f4df9b;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #d6b85c;
+    color: #10291e;
+    transform: translateY(-3px);
+}
+
+.footer {
+    margin-top: 65px;
+    color: #b6a879;
+    font-size: 13px;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes brillar {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+/* =================================
+   SEGUNDA PANTALLA: REGALO
+================================= */
+
+.gift-screen {
+    text-align: center;
+    padding: 40px 20px;
+    animation: aparecer 1.5s ease;
+}
+
+.gift-screen h1 {
+    font-size: clamp(35px, 6vw, 65px);
+    margin: 25px 0 55px;
+}
+
+.gift-box {
+    position: relative;
+    width: 180px;
+    height: 160px;
+    margin: 0 auto 35px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+    animation: flotar 2.5s infinite ease-in-out;
+}
+
+.gift-box:hover {
+    transform: scale(1.08);
+}
+
+.gift-body {
+    position: absolute;
+    bottom: 0;
+    width: 180px;
+    height: 115px;
+    background: linear-gradient(135deg, #176044, #0b3325);
+    border: 2px solid #d6b85c;
+    border-radius: 5px;
+    box-shadow: 0 10px 35px #0008;
+}
+
+.gift-lid {
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    width: 200px;
+    height: 35px;
+    background: linear-gradient(135deg, #d9bd68, #a98432);
+    border: 2px solid #f4df9b;
+    border-radius: 5px;
+    z-index: 2;
+    transition: transform 0.8s ease;
+}
+
+.gift-ribbon {
+    position: absolute;
+    top: 45px;
+    left: 75px;
+    width: 30px;
+    height: 115px;
+    background: linear-gradient(90deg, #d9bd68, #f4df9b, #b28b3d);
+    z-index: 1;
+}
+
+.gift-bow {
+    position: absolute;
+    top: -15px;
+    left: 65px;
+    width: 50px;
+    font-size: 42px;
+    z-index: 3;
+    transition: transform 0.8s ease;
+}
+
+.gift-box.abierto .gift-lid {
+    transform: translate(25px, -65px) rotate(20deg);
+}
+
+.gift-box.abierto .gift-bow {
+    transform: translate(25px, -65px) rotate(25deg);
+}
+
+@keyframes flotar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =================================
+   TERCERA PANTALLA: UNIVERSO
+================================= */
+
+.universe-screen {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    padding: 55px 7%;
+    text-align: center;
+    overflow-y: auto;
+    animation: aparecer 1.2s ease;
+}
+
+.universe-screen h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    margin: 15px 0;
+}
+
+.universe-screen > .message {
+    margin-bottom: 40px;
+}
+
+.interests {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1050px;
+    margin: 0 auto 40px;
+}
+
+.interest-card {
+    padding: 28px 20px;
+    min-height: 190px;
+    background: linear-gradient(145deg, #174a38, #0b241b);
+    border: 1px solid #b99a4c88;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #0004;
+    transition: transform 0.3s, border-color 0.3s;
+    animation: aparecer 1s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-8px);
+    border-color: #f4df9b;
+}
+
+.interest-icon {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.interest-card h2 {
+    color: #f4df9b;
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.interest-card p {
+    color: #e4dfc9;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.universe-screen button {
+    margin: 10px 0 30px;
+}
+
+/* Ajuste para pantallas más pequeñas */
+
+@media (max-width: 850px) {
+    .interests {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .interests {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =================================
+   CUARTA PANTALLA: LA PREGUNTA
+================================= */
+
+.question-screen {
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px 25px;
+    display: none;
+    text-align: center;
+    animation: aparecer 1.2s ease;
+}
+
+.question-screen h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    margin: 20px 0;
+}
+
+.question-box {
+    max-width: 750px;
+    margin: 55px auto 30px;
+    padding: 45px 25px;
+    background: linear-gradient(145deg, #174a38, #0b241b);
+    border: 1px solid #d6b85c;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px #0006;
+}
+
+.question-box h2 {
+    color: #f4df9b;
+    font-size: clamp(25px, 4vw, 38px);
+    font-weight: normal;
+}
+
+.question-message {
+    color: #e4dfc9;
+    font-size: 18px;
+    margin: 25px 0;
+    min-height: 28px;
+}
+
+.question-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 35px;
+    position: relative;
+    isolation: isolate;
+    overflow: visible;
+}
+
+#boton-si {
+    background: #d6b85c;
+    color: #10291e;
+    font-weight: bold;
+    transform-origin: center;
+    position: relative;
+    transition: transform 0.35s ease, padding 0.35s ease;
+    position: relative;
+    z-index: 5;
+}
+
+#boton-no {
+    position: relative;
+    z-index: 2;
+}
+
+#respuesta-si {
+    max-width: 750px;
+    margin: 35px auto;
+    padding: 35px 20px;
+    background: linear-gradient(145deg, #174a38, #0b241b);
+    border: 1px solid #d6b85c;
+    border-radius: 15px;
+    animation: aparecer 1s ease;
+}
+
+#respuesta-si h2 {
+    color: #f4df9b;
+    font-size: clamp(28px, 5vw, 45px);
+    margin-bottom: 20px;
+}
+
+#respuesta-si .message {
+    margin: 20px 0;
+}
+/* QUINTA PANTALLA: CARTA FINAL */
+.letter-screen {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    padding: 55px 20px;
+    text-align: center;
+    animation: aparecer 1.2s ease;
+    overflow-y: auto;
+}
+
+.letter-screen h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    margin: 20px 0 35px;
+}
+
+.letter-container {
+    max-width: 780px;
+    margin: 0 auto 40px;
+    padding: 55px 60px;
+    text-align: left;
+    color: #403421;
+    background: linear-gradient(135deg, #fff8df, #ead9ad);
+    border: 2px solid #c5a45b;
+    border-radius: 5px;
+    box-shadow: 0 15px 45px #0007;
+    line-height: 1.9;
+    font-size: 18px;
+    position: relative;
+}
+
+.letter-decoration {
+    text-align: center;
+    color: #a98432;
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+#texto-carta {
+    white-space: pre-line;
+}
+
+.letter-signature {
+    margin-top: 35px;
+    text-align: right;
+    color: #80632f;
+    font-style: italic;
+}
+/* ACABADO DE PERGAMINO ANTIGUO */
+.letter-container {
+    background:
+        radial-gradient(ellipse at top left, #fff9e8 0%, transparent 55%),
+        radial-gradient(ellipse at bottom right, #c9ad78 0%, transparent 60%),
+        linear-gradient(135deg, #f5e6bd, #e8d3a2, #f3e4bd);
+
+    border: 3px double #a9874d;
+    border-radius: 3px;
+    box-shadow:
+        0 15px 40px #0009,
+        inset 0 0 35px #a17c4433;
+
+    font-family: Georgia, serif;
+    position: relative;
+}
+
+.letter-container::before {
+    content: "✦";
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #a9874d;
+    font-size: 22px;
+}
+
+.letter-container::after {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid #b99a63;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+#texto-carta {
+    white-space: normal;
+    text-align: justify;
+    text-indent: 30px;
+    color: #493a27;
+    font-family: Georgia, serif;
+    line-height: 2;
+}
